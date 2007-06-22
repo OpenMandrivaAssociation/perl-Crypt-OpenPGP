@@ -20,7 +20,21 @@ BuildRequires:	perl-devel >= 5.8.1
 %endif
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-root
-BuildRequires:	perl(Data::Buffer) >= 0.04 perl(MIME::Base64) >= 3.07 perl(Math::Pari) perl(Compress::Zlib) perl(LWP::UserAgent) perl(URI::Escape) perl(Crypt::DSA) perl(Crypt::RSA) perl(Crypt::IDEA) perl(Crypt::DES_EDE3) perl(Crypt::Rijndael) perl(Crypt::CAST5_PP) perl(Crypt::RIPEMD160) perl(Crypt::Twofish) >= 2.00
+BuildRequires:	perl(Data::Buffer) >= 0.04
+BuildRequires: perl(MIME::Base64) >= 3.07
+BuildRequires: perl(Math::Pari)
+BuildRequires: perl(Compress::Zlib)
+BuildRequires: perl(LWP::UserAgent)
+BuildRequires: perl(URI::Escape)
+BuildRequires: perl(Crypt::DSA)
+BuildRequires: perl(Crypt::RSA)
+BuildRequires: perl(Crypt::IDEA)
+BuildRequires: perl(Crypt::DES_EDE3)
+BuildRequires: perl(Crypt::Rijndael)
+BuildRequires: perl(Crypt::CAST5_PP)
+BuildRequires: perl(Crypt::RIPEMD160)
+BuildRequires: perl(Crypt::Twofish) >= 2.00
+BuildRequires: perl(Crypt::Blowfish)
 
 
 %description
