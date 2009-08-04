@@ -1,25 +1,19 @@
-%define	module	Crypt-OpenPGP
-%define name	perl-%{module}
-%define	modprefix Crypt
+%define	upstream_name	 Crypt-OpenPGP
+%define upstream_version 1.03
 
-%define version 1.03
-
-%define	rel	1
-%define release %mkrel %{rel}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Pure-Perl OpenPGP implementation
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
 %endif
-BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 BuildRequires:	perl(Data::Buffer) >= 0.04
 BuildRequires: perl(MIME::Base64) >= 3.07
 BuildRequires: perl(Math::Pari)
@@ -35,7 +29,8 @@ BuildRequires: perl(Crypt::CAST5_PP)
 BuildRequires: perl(Crypt::RIPEMD160)
 BuildRequires: perl(Crypt::Twofish) >= 2.00
 BuildRequires: perl(Crypt::Blowfish)
-
+BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Crypt::OpenPGP is a pure-Perl implementation of the OpenPGP stan- dard[1]. In
@@ -53,7 +48,8 @@ scenario, given your public key, and told to encrypt all messages; they will
 then be readable only by you.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
+rm -f t/07-digest.t
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -74,5 +70,5 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README
-%{perl_vendorlib}/%{modprefix}/*
+%{perl_vendorlib}/Crypt/*
 %{_mandir}/*/*
