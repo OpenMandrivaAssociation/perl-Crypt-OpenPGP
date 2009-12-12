@@ -14,21 +14,23 @@ Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
 %endif
-BuildRequires:	perl(Data::Buffer) >= 0.04
-BuildRequires: perl(MIME::Base64) >= 3.07
-BuildRequires: perl(Math::Pari)
 BuildRequires: perl(Compress::Zlib)
-BuildRequires: perl(LWP::UserAgent)
-BuildRequires: perl(URI::Escape)
-BuildRequires: perl(Crypt::DSA)
-BuildRequires: perl(Crypt::RSA)
-BuildRequires: perl(Crypt::IDEA)
-BuildRequires: perl(Crypt::DES_EDE3)
-BuildRequires: perl(Crypt::Rijndael)
-BuildRequires: perl(Crypt::CAST5_PP)
-BuildRequires: perl(Crypt::RIPEMD160)
-BuildRequires: perl(Crypt::Twofish) >= 2.00
 BuildRequires: perl(Crypt::Blowfish)
+BuildRequires: perl(Crypt::CAST5_PP)
+BuildRequires: perl(Crypt::DES_EDE3)
+BuildRequires: perl(Crypt::DSA)
+BuildRequires: perl(Crypt::IDEA)
+BuildRequires: perl(Crypt::Rijndael)
+BuildRequires: perl(Crypt::RIPEMD160)
+BuildRequires: perl(Crypt::RSA)
+BuildRequires: perl(Crypt::Twofish) >= 2.00
+BuildRequires: perl(Data::Buffer) >= 0.04
+BuildRequires: perl(File::HomeDir)
+BuildRequires: perl(LWP::UserAgent)
+BuildRequires: perl(Math::Pari)
+BuildRequires: perl(MIME::Base64) >= 3.07
+BuildRequires: perl(URI::Escape)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
@@ -58,7 +60,7 @@ rm -f t/07-digest.t
 %check
 # this test works under iurt as user, but not under build system
 rm -f t/07-digest.t
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
