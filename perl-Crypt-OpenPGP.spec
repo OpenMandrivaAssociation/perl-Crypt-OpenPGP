@@ -1,9 +1,9 @@
 %define	upstream_name	 Crypt-OpenPGP
-%define upstream_version 1.04
+%define upstream_version 1.06
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 
 Summary:	Pure-Perl OpenPGP implementation
 License:	Artistic/GPL
