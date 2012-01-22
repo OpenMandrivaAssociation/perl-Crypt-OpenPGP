@@ -10,10 +10,6 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
-
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel >= 5.8.1
-%endif
 BuildRequires: perl(Compress::Zlib)
 BuildRequires: perl(Crypt::Blowfish)
 BuildRequires: perl(Crypt::CAST5_PP)
@@ -30,6 +26,7 @@ BuildRequires: perl(LWP::UserAgent)
 BuildRequires: perl(Math::Pari)
 BuildRequires: perl(MIME::Base64) >= 3.07
 BuildRequires: perl(URI::Escape)
+BuildRequires: perl(Data::Random)
 
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
