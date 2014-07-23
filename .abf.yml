@@ -1,2 +1,4 @@
+removed_sources:
+  Crypt-OpenPGP-1.06.tar.gz: 7ee499841f1184823566d2ff50b2670f4ec0c802
 sources:
-  "Crypt-OpenPGP-1.06.tar.gz": 7ee499841f1184823566d2ff50b2670f4ec0c802
+  Crypt-OpenPGP-1.07.tar.gz: 4e8520ae86ccb042c0060b1d0f164871181658ef
