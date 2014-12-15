@@ -1,10 +1,10 @@
 %define	modname	Crypt-OpenPGP
-%define modver 1.07
+%define modver 1.08
 
 Summary:	Pure-Perl OpenPGP implementation
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	1
 License:	Artistic/GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
@@ -49,7 +49,7 @@ then be readable only by you.
 rm -f t/07-digest.t
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
