@@ -1,5 +1,5 @@
 %define	modname	Crypt-OpenPGP
-%define modver 1.07
+%define modver 1.08
 
 Summary:	Pure-Perl OpenPGP implementation
 Name:		perl-%{modname}
@@ -53,7 +53,6 @@ rm -f t/07-digest.t
 %make
 
 %check
-# this test works under iurt as user, but not under build system
 rm -f t/07-digest.t
 #make test
 
@@ -62,5 +61,6 @@ rm -f t/07-digest.t
 
 %files
 %doc README
+%{_bindir}/*
 %{perl_vendorlib}/Crypt/*
 %{_mandir}/man3/*
