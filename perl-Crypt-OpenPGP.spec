@@ -1,14 +1,14 @@
 %define	modname	Crypt-OpenPGP
-%define modver 1.08
+%define modver 1.21
 
 Summary:	Pure-Perl OpenPGP implementation
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	6
+Version:	%{modver}
+Release:	1
 License:	Artistic/GPLv2
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
+Url:		https://github.com/perl-Crypt-OpenPGP/Crypt-OpenPGP
+Source0:	https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Crypt-OpenPGP-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
